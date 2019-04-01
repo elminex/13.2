@@ -11,23 +11,14 @@
         var trigger = event.target.getAttribute('href');
         for (var i = 0; i < modals.length; i++) {
             modals[i].classList.remove('show');
-        }
-        switch (trigger) {
-            case '#modal-one':
-                document.querySelector('#modal-one').classList.add('show');
-                break;
-            case '#modal-two':
-                document.getElementById('modal-two').classList.add('show');
-                break;
-            case '#modal-three':
-                document.getElementById('modal-three').classList.add('show');
-        }
+		}
+		var modal = document.querySelector(trigger);
+		modal.classList.add('show');
 	};
 	
 	// Mimo, że obecnie mamy tylko jeden link, stosujemy kod dla wielu linków. W ten sposób nie będzie trzeba go zmieniać, kiedy zechcemy mieć więcej linków lub guzików otwierających modale
 	
 	var modalLinks = document.querySelectorAll('.show-modal');
-	
 	for(var i = 0; i < modalLinks.length; i++){
 		modalLinks[i].addEventListener('click', showModal);
 	}
